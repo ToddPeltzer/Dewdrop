@@ -22,19 +22,19 @@ function CityResult({ match }) {
     }, [])
 
     //convert Kelvin to Fahrenheit and floor it
-    let temp = Math.floor(( cities.main.temp - 273.15 ) * 9/5 + 32)
+    // const temp = Math.floor(( cities.main.temp - 273.15 ) * 9/5 + 32)
 
     //floor wind speed
-    let wind = Math.floor(cities.wind.speed)
+    // const wind = Math.floor(cities.wind.speed)
     return (
             <section>
                 City: {cities.name}
                 <br/>
-                Temp: {temp}ºF
+                {/* Temp: {temp}ºF
                 <br/>
                 Wind: {wind}mph
                 <br/>
-                Humidity: {cities.main.humidity}%
+                Humidity: {cities.main.humidity}% */}
                
             </section>
     );

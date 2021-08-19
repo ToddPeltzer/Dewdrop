@@ -7,7 +7,6 @@ import StateData from '../state-data.json'
 function States(props) {
 
     const [states, setStates] = useState(StateData)
-    console.log('STATE', states)
 
     return (
         <div>

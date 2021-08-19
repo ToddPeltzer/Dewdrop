@@ -3,22 +3,21 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom'
 import StateData from '../state-data.json'
 
+function CityList(props) {
 
-function Cities({ match }) {
+    const [cityList, setCityList] = useState(StateData)
 
-
-    const [cities, setCities] = useState(StateData)
-
-    //filtering out JSON to get only the cities within the state user clicked on
-    let newCities = cities.filter(item => item.name == match.params.id)[0].city
+let newList = cityList.filter(item => item.city)
+let useThis = newList.map(location => { return (location.city)})
+let concatCity = useThis.concat()
 
     return (
             <section>
-                {newCities.map(location => {
-                  
+                {useThis.map(location => {
+                    console.log(location)
                     return (
                         
-                    <Link to={`/states/cities/${location}`} key={location}>
+                    <Link to={`/test`} key={location}>
                             <div>
                                 <span>{location}</span>
                             </div>
@@ -26,7 +25,7 @@ function Cities({ match }) {
                     )
                 })}
             </section> 
-    );
+    )
 }
 
-export default Cities;
+export default CityList;

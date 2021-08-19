@@ -1,32 +1,37 @@
 import React, { useState, useEffect } from 'react';
 
-function StateResult(props) {
+function StateResult({ match }) {
 
     const [states, setStates] = useState()
 
-    const searchInfo = {
-        url: "api.openweathermap.org/data/2.5/weather?",
-        key: "ba2e4832ccee6deccfb7d5e2eddd0470"
-    }        
+        const key = process.env.REACT_APP_WEATHER_KEY
+
         useEffect (() => {
-            const url  = `//${searchInfo.url}q=miami&appid=${searchInfo.key}`
+            const url = `//api.openweathermap.org/data/2.5/weather?q=${match.params.id}&appid=${key}`
             fetch(url)
             .then((res) => {
                return res.json()
             })
             .then((res) => {
                 setStates(res)
-                console.log('LOOK HERE', res)
             })
             .catch(console.error)
         }, [])
 
+    //convert Kelvin to Fahrenheit and floor it
+    // const temp = Math.floor(( cities.main.temp - 273.15 ) * 9/5 + 32)
+
+    //floor wind speed
+    // const wind = Math.floor(cities.wind.speed)
     return (
-            <section>
-                {states.name}
-                {states.weather.main}
-                {states.wind.speed}
-                {states.main.temp}
+        <section>
+            City: {states.name}
+            <br/>
+            {/* Temp: {temp}ºF
+            <br/>
+            Wind: {wind}mph
+            <br/>
+            Humidity: {cities.main.humidity}% */}
             </section>
     );
 }

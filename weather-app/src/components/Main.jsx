@@ -4,12 +4,13 @@ import Cities from './Cities'
 import States from './States'
 import Home from './Home'
 import CityResult from './CityResult'
-
+import CityList from './CityList'
 
 
 function Main(props) {
 
-    
+    "https://tile.openweathermap.org/map/{layer}/{z}/{x}/{y}.png?appid={API key}"
+
 
     return (
         <div>
@@ -19,6 +20,9 @@ function Main(props) {
 
             <Route  exact path="/states"
                     component={States} />
+            
+            <Route  exact path="/test"
+                    component={CityList} />
             
             <Route  exact path="/states/:id"
                     render={(routerProps) => (

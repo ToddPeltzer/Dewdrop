@@ -1,50 +1,34 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom'
-
-function Cities(props) {
-
-    const [cities, setCities] = useState([])
-
-    const searchInfo = {
-        input: "miami",
-        url: "//api.openweathermap.org/data/2.5/weather?",
-        key: 'ba2e4832ccee6deccfb7d5e2eddd0470'
-    }        
-        useEffect (() => {
-            const url  = `${searchInfo.url}q=${searchInfo.input}&appid=${searchInfo.key}`
-            fetch(url)
-            .then((res) => {
-               return res.json()})
-            .then((res) => {
-                setCities(res)
-                console.log('LOOK HERE', res)
-        })
-        .catch(console.error)
-    }, [])
+import StateData from '../state-data.json'
 
 
-// console.log('LINE 22', cities)
-    if (cities===[]) {
-        console.log(cities)
-        return ([])
-    } else {
+function Cities({ match, states, statesName, setStates }) {
+
+
+    const [cities, setCities] = useState(StateData)
+    console.log('CITY', cities)
+    // setCities(match.params.id)
+    // let newState = match.params.id
+
+let newCities = cities.filter(item => item.name == match.params.id)[0].city
+
     return (
-        <section className="cityContainer">
-            {cities.name}
-            {/* {cities.map(city => {
-                console.log(city)
-                return(
-                    <Link to={`q=${city.name}&appid=${searchInfo.key}`}>
-                        <div className='cityName'>
-                            <h3>{city.name}</h3>
-                        </div>
+            <section className="stateList">
+                {newCities.map(location => {
+                  
+                    return (
+                        
+                    <Link to={`/states/cities/${location}`} key={location}>
+                            <div>
+                                <li>{location}</li>
+                            </div>
                     </Link>
-                )
-            }
-            )} */}
-        </section>
+                    )
+                })}
+            </section> 
     );
 }
-}
-export default Cities;
 
+export default Cities;

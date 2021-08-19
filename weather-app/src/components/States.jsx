@@ -1,34 +1,30 @@
-// import React, { useState, useEffect } from 'react';
-// import { Link } from 'react-router-dom'
+import React from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom'
+import StateData from '../state-data.json'
 
-// function States(props) {
 
-//     const [states, setStates] = useState()
+function States(props) {
 
-//     const url = "api.openweathermap.org/data/2.5/weather?"
+    const [states, setStates] = useState(StateData)
+    console.log('STATE', states)
 
-//     useEffect (() => {
-//         fetch(url)
-//         .then((res) => res.json())
-//         .then((res) => {
-//             setStates(res)
-//         })
-//         .catch(console.error)
-//     }, [])
+    return (
+        <div>
+            <section className="stateList">
+                {states.map(state => {
+                    return (
+                    <Link to={`/states/${state.name}`} key={state.name}>
+                            <div>
+                                <h3>{state.name}</h3>
+                            </div>
+                    </Link>
+                    )
+                })}
+            </section>  
+        </div>
+       
+    );
+}
 
-//     return (
-//         <section className="stateContainer">
-//             {states.map(state => {
-//                 return(
-//                     <Link to={`q=${state.name}`}>
-//                         <div className='stateName'>
-//                             <h3>{state.name}</h3>
-//                         </div>
-//                     </Link>
-//                 )
-//             })}
-//         </section>
-//     );
-// }
-
-// export default States;
+export default States;

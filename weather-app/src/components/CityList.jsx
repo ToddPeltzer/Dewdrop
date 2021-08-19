@@ -7,21 +7,32 @@ function CityList(props) {
 
     const [cityList, setCityList] = useState(StateData)
 
-let newList = cityList.filter(item => item.city)
-let useThis = newList.map(location => { return (location.city)})
-let concatCity = useThis.concat()
+    let arrayList = cityList.map(location => { return (location.city)})
+console.log(arrayList)
+    let newLocation = ""
 
-    return (
-            <section>
-                {useThis.map(location => {
-                    console.log(location)
+    function getCity (location) {
+        for (let i=0; i<location.length; i++) {
+            newLocation = location[i]
+            // console.log(i)
+        }
+    }
+    
+    console.log('HEY THERE', newLocation)
+
+return (
+    <section>
+                {arrayList.map(location => {
+                    // console.log('LOCATION', location)
+                    getCity(location)
                     return (
-                        
-                    <Link to={`/test`} key={location}>
+                            
+                        <Link to={`/test`} key={location}>
                             <div>
-                                <span>{location}</span>
+                                <li>{location} </li><br/>
                             </div>
-                    </Link>
+                        </Link>
+                    
                     )
                 })}
             </section> 

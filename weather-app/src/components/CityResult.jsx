@@ -17,27 +17,32 @@ function CityResult({ match }) {
             })
             .then((res) => {
                 setCities(res)
+                console.log(cities.main.temp)
             })
             .catch(console.error)
     }, [])
 
-    //convert Kelvin to Fahrenheit and floor it
-    // const temp = Math.floor(( cities.main.temp - 273.15 ) * 9/5 + 32)
-
-    //floor wind speed
-    // const wind = Math.floor(cities.wind.speed)
+    if (!cities.wind && !cities.main) { return <h2>loading pleaase wait</h2>} else {
+    // convert Kelvin to Fahrenheit and floor it
+    const temp = Math.floor(( cities.main.temp - 273.15 ) * 9/5 + 32)
+    
+    // floor wind speed
+    const wind = Math.floor(cities.wind.speed)
     return (
             <section>
                 City: {cities.name}
                 <br/>
-                {/* Temp: {temp}ºF
+                {/* {cities.wind.speed}
+                <br/>
+                {cities.main.temp} */}
+                Temp: {temp}ºF
                 <br/>
                 Wind: {wind}mph
                 <br/>
-                Humidity: {cities.main.humidity}% */}
+                Humidity: {cities.main.humidity}%
                
             </section>
-    );
+    );}
 }
 
 export default CityResult;

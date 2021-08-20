@@ -20,7 +20,7 @@ function NewYork(props) {
         .catch(console.error)
     }, [])
 
-    if (!city.wind && !city.main) { return <h2>loading pleaase wait</h2>} else {
+    if (!city.wind && !city.main) { return <span className="loading">loading please wait...</span>} else {
         // convert Kelvin to Fahrenheit and floor it
         const temp = Math.floor(( city.main.temp - 273.15 ) * 9/5 + 32)
         
@@ -31,6 +31,8 @@ function NewYork(props) {
             City: {city.name}
                 <br/>
             Temp: {temp}ºF
+                <br/>
+            Condition: {city.weather[0].main}
                 <br/>
             Wind: {wind}mph
                 <br/>

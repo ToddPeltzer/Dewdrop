@@ -1,6 +1,7 @@
 
 
 import React, { useState, useEffect } from 'react';
+import '../styling/city-result.css'
 
 
 function CityResult({ match }) {
@@ -22,7 +23,7 @@ const [city, setCity] = useState([])
         .catch(console.error)
     }, [])
 
-    if (!city.wind && !city.main) { return <h2>loading pleaase wait</h2>} else {
+    if (!city.wind && !city.main) { return <span className="loading">loading please wait...</span>} else {
         // convert Kelvin to Fahrenheit and floor it
         const temp = Math.floor(( city.main.temp - 273.15 ) * 9/5 + 32)
         
@@ -31,15 +32,19 @@ const [city, setCity] = useState([])
         console.log(city.main)
     return (
         <div>
-            City: {city.name}
-                <br/>
-            Temp: {temp}ºF
-                <br/>
-            Wind: {wind}mph
-                <br/>
-            Condition: {city.weather[0].main}
-                <br/>
-            Humidity: {city.main.humidity}%
+            <section className="cityResultContainer">
+                <div className="cityResult">
+                    City: {city.name}
+                        <br/>
+                    Temp: {temp}ºF
+                        <br/>
+                    Wind: {wind}mph
+                        <br/>
+                    Condition: {city.weather[0].main}
+                        <br/>
+                    Humidity: {city.main.humidity}%
+                </div>
+            </section>
         </div>
     );
 }

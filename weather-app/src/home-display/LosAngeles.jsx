@@ -33,6 +33,9 @@ function LosAngeles(props) {
                 <br/>
             Wind: {wind}mph
                 <br/>
+                Condition: {city.weather[0].main}
+
+<br/>
             Humidity: {city.main.humidity}%
         </div>
     );

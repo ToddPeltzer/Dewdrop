@@ -25,6 +25,7 @@ function LosAngeles(props) {
         
         // floor wind speed
         const wind = Math.floor(city.wind.speed)
+        console.log(city.main)
     return (
         <div>
             City: {city.name}
@@ -33,9 +34,8 @@ function LosAngeles(props) {
                 <br/>
             Wind: {wind}mph
                 <br/>
-                Condition: {city.weather[0].main}
-
-<br/>
+            Condition: {city.weather[0].main}
+                <br/>
             Humidity: {city.main.humidity}%
         </div>
     );

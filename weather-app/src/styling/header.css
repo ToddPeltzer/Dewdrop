@@ -1,0 +1,37 @@
+.headerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0%;
+    background-color: #1D71F2;
+    height: 200px;
+    font-family: 'Titan One', cursive;}
+
+
+.headerLogo {
+    flex-grow: 1;
+    margin-left: 50px;
+}
+
+#headerImage {
+    width: 300px;
+    height: 190px;
+}
+
+.headerName {
+    flex-grow: 1;
+}
+
+.headerStateList {
+    margin-right: 50px;
+}
+
+
+
+
+/* @media (max-width: 920px) {
+    CLASS {
+        flex: 1 21%;
+    }
+} */

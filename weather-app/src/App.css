@@ -1,1 +1,11 @@
+.appMain {
+    background-color: #19C3FB;
+    height:100vmax;
+}
 
+.sidebar {
+    background-color: lawngreen;
+    position: fixed;
+    width: 200px;
+    height: 100vmax
+}

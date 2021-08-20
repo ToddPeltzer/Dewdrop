@@ -1,21 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import States from './States';
-
+import '../styling/header.css'
+import Logo from '../styling/cloud.png'
 
 function Header(props) {
     return (
-        <div>
-            <span>
-                <Link to="/">Weather App</Link>
-            </span>
-            <span>
-                <Link to="/states">State List</Link>
-            </span>
-            <span>
-                <Link to="/states/">City List</Link>
+        <div className="headerContainer">
+            <span className="headerLogo">
+                <Link to="/"><img id="headerImage" src={Logo} alt="cloud-logo"></img></Link>
             </span>
             
+            <span className="headerName">
+                <Link to="/" style={{ color: '#E3F4FE', textDecoration: 'none', fontSize: '50px' }}>Weather App</Link>
+            </span>
+
+            <span className="headerStateList">
+                <Link to="/states" style={{ color: '#E3F4FE', textDecoration: 'none', fontSize: '50px' }}>State List</Link>
+            </span>
         </div>
     );
 }

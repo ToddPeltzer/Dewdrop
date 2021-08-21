@@ -85,6 +85,9 @@ const [city, setCity] = useState([])
         // convert Kelvin to Fahrenheit and floor it
         const temp = Math.floor(( city.main.temp - 273.15 ) * 9/5 + 32)
         
+        const tempMin = Math.floor(( city.main.temp_min - 273.15 ) * 9/5 + 32)
+        const tempMax = Math.floor(( city.main.temp_max - 273.15 ) * 9/5 + 32)
+
         // floor wind speed
         wind = Math.floor(city.wind.speed)
 
@@ -92,18 +95,20 @@ const [city, setCity] = useState([])
 
     return (
         <div>
-            <span className="citiesResultTitle">City Result</span>
+            <span className="citiesResultTitle">{city.name}</span>
             <section className="cityResultContainer">
                 <div className="cityResult">
                     <img className="weatherIcon" src={icon} alt={altText}></img>
                         <br/>
-                    City: {city.name}
-                        <br/>
                     Temp: {temp}ºF
                         <br/>
-                    Wind: {wind}mph
+                    Temp Min: {tempMin}ºF
+                        <br/>
+                    Temp Max: {tempMax}ºF
                         <br/>
                     Condition: {city.weather[0].main}
+                        <br/>
+                    Wind: {wind}mph
                         <br/>
                     Humidity: {city.main.humidity}%
                 </div>

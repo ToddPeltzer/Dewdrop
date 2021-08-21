@@ -80,11 +80,14 @@ function Chicago(props) {
         // convert Kelvin to Fahrenheit and floor it
         const temp = Math.floor(( city.main.temp - 273.15 ) * 9/5 + 32)
         
+        const tempMin = Math.floor(( city.main.temp_min - 273.15 ) * 9/5 + 32)
+        const tempMax = Math.floor(( city.main.temp_max - 273.15 ) * 9/5 + 32)
+
         // floor wind speed
         const wind = Math.floor(city.wind.speed)
 
         weatherIcon()
-        
+
     return (
         <div>
             <img className="weatherIcon" src={icon} alt={altText}></img>
@@ -92,6 +95,10 @@ function Chicago(props) {
             City: {city.name}
                 <br/>
             Temp: {temp}ºF
+                <br/>
+            Temp Min: {tempMin}ºF
+                <br/>
+            Temp Max: {tempMax}ºF
                 <br/>
             Condition: {city.weather[0].main}
                 <br/>

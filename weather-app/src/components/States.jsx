@@ -15,11 +15,11 @@ function States(props) {
             <section className="stateList">
                 {states.map(state => {
                     return (
-                    <Link className="statesLink" to={`/states/${state.name}`} key={state.name}>
-                            <div>
-                                <span className="stateName">{state.name}</span>
-                            </div>
-                    </Link>
+                        <Link className="statesLink" to={`/states/${state.name}`} key={state.name}>
+                                <div>
+                                    <span className="stateName">{state.name}</span>
+                                </div>
+                        </Link>
                     )
                 })}
             </section>  

@@ -2,6 +2,13 @@
 
 import React, { useState, useEffect } from 'react';
 import '../styling/city-result.css'
+import windy from '../images/new-windy.png'
+import cloudy from '../images/cloudy.png'
+import sunny from '../images/sunny.png'
+import foggy from '../images/foggy.png'
+import rainy from '../images/rainy.png'
+import stormy from '../images/thunder.png'
+import snowy from '../images/new-snow.png'
 
 
 function CityResult({ match }) {
@@ -23,17 +30,73 @@ const [city, setCity] = useState([])
         .catch(console.error)
     }, [])
 
+    let icon = ""
+    let wind = ""
+    let altText = ""
+
+    function weatherIcon () {
+        if (wind > "10") {
+            icon = windy
+            altText = "Windy Image"
+        } else if (city.weather[0].main === "Clouds") {
+            icon = cloudy
+            altText = "Cloudy Image"
+        } else if (city.weather[0].main === "Overcast") {
+            icon = cloudy
+            altText = "Cloudy Image"
+        } else if (city.weather[0].main === "Clear"){
+            icon = sunny
+            altText = "Clear Image"
+        } else if (city.weather[0].main === "Smoke") {
+            icon = foggy
+            altText = "Foggy Image"
+        } else if (city.weather[0].main === "Haze") {
+            icon = foggy
+            altText = "Foggy Image"
+        } else if (city.weather[0].main === "Rain") {
+            icon = rainy
+            altText = "Rainy Image"
+        } else if (city.weather[0].main === "Mist") {
+            icon = rainy
+            altText = "Mist Image"
+        } else if(city.weather[0].main === "Thunder") {
+            icon = stormy
+            altText = "Storm Image"
+        } else if(city.weather[0].main === "Lightning") {
+            icon = stormy
+            altText = "Storm Image"
+        } else if(city.weather[0].main === "Snow") {
+            icon = snowy
+            altText = "Snow Image"
+        } else if(city.weather[0].main === "Blizzard") {
+            icon = snowy
+            altText = "Snow Image"
+        } else if(city.weather[0].main === "Slurry") {
+            icon = snowy
+            altText = "Snow Image"
+        } else {
+            icon=""
+            altText=""
+        }
+
+    }
+
     if (!city.wind && !city.main) { return <span className="loading">loading please wait...</span>} else {
         // convert Kelvin to Fahrenheit and floor it
         const temp = Math.floor(( city.main.temp - 273.15 ) * 9/5 + 32)
         
         // floor wind speed
-        const wind = Math.floor(city.wind.speed)
-        console.log(city.main)
+        wind = Math.floor(city.wind.speed)
+
+        weatherIcon()
+
     return (
         <div>
+            <span className="citiesResultTitle">City Result</span>
             <section className="cityResultContainer">
                 <div className="cityResult">
+                    <img className="weatherIcon" src={icon} alt={altText}></img>
+                        <br/>
                     City: {city.name}
                         <br/>
                     Temp: {temp}ºF

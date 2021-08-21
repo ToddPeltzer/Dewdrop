@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import '../styling/header.css'
-import Logo from '../styling/cloud.png'
+import Logo from '../images/cloud.png'
 
 function Header(props) {
+    console.log(Logo)
+
     return (
         <div className="headerContainer">
             <span className="headerLogo">

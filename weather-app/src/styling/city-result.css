@@ -5,25 +5,19 @@
     align-items: center;
     justify-content: space-evenly;
     font-size: 20px;
-    padding-top: 100px;
+    padding-top: 80px;
 
 }
 
 .cityResult {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     border: 5px solid #FFCD00;
     height: 200px;
-    width: 200px;
-}
-
-.popularCitiesTitle {
-    display: flex;
-    justify-content: center;
-    font-size: 30px;
-    font-weight: bolder;
-    padding-top: 20px;
+    width: 300px;
+    background-color: #FEFADF;
 }
 
 .loading {
@@ -33,4 +27,22 @@
     align-items: center;
     font-size: 20px;
     padding-top: 100px;
+}
+
+.weatherIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+    padding-top: 20px;
+    padding-right: 10px;
+}
+
+.citiesResultTitle {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bolder;
+    padding-top: 30px;
 }

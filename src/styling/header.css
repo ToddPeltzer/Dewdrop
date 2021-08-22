@@ -6,7 +6,10 @@
     padding: 0%;
     background-color: #1D71F2;
     height: 200px;
-    font-family: 'Titan One', cursive;}
+    width: 100%;
+    min-width: 100vmax;
+    font-family: 'Titan One', cursive;
+}
 
 
 .headerLogo {

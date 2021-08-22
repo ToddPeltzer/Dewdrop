@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import '../styling/header.css'
 import Logo from '../images/cloud.png'
+import Search from './Search'
 
 function Header(props) {
     console.log(Logo)
@@ -18,6 +19,9 @@ function Header(props) {
 
             <span className="headerStateList">
                 <Link to="/states" style={{ color: '#E3F4FE', textDecoration: 'none', fontSize: '50px' }}>State List</Link>
+            </span>
+            <span>
+                <Search />
             </span>
         </div>
     );

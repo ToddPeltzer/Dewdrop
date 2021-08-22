@@ -16,7 +16,7 @@
     align-items: center;
     border: 5px solid #FFCD00;
     height: 200px;
-    width: 300px;
+    width: 400px;
     background-color: #FEFADF;
     padding-bottom: 20px;
 }
@@ -37,7 +37,7 @@
     height: 100px;
     width: 100px;
     padding-top: 20px;
-    padding-right: 10px;
+    padding-right: 30px;
 }
 
 .citiesResultTitle {

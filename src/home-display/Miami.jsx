@@ -55,7 +55,7 @@ function Miami(props) {
         } else if (city.weather[0].main === "Mist") {
             icon = rainy
             altText = "Mist Image"
-        } else if(city.weather[0].main === "Thunder") {
+        } else if(city.weather[0].main === "Thunderstorm") {
             icon = stormy
             altText = "Storm Image"
         } else if(city.weather[0].main === "Lightning") {

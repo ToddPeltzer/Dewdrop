@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom'
 import windy from '../images/new-windy.png'
 import cloudy from '../images/cloudy.png'
 import sunny from '../images/sunny.png'
@@ -31,6 +32,8 @@ const [city, setCity] = useState([])
     let icon = ""
     let wind = ""
     let altText = ""
+    let history = useHistory()
+
 
     function weatherIcon () {
         if (wind > "10") {
@@ -111,6 +114,9 @@ const [city, setCity] = useState([])
                     Humidity: {city.main.humidity}%
                 </div>
             </section>
+            <div className="backButton">
+            <button onClick={() => history.goBack()}>Back to Cities</button>
+            </div>
         </div>
     );
 }

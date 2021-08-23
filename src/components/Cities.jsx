@@ -18,8 +18,9 @@ function Cities({ match }) {
     return (
             <div>
                 <span className="citiesTitle">Cities in {match.params.id}</span>
-                <input type="text" placeholder="Filter States" onChange={e => {setSearch(e.target.value)}}/>
-
+                <div className="cityFilter">
+                <input type="text" placeholder="Filter Cities..." onChange={e => {setSearch(e.target.value)}}/>
+                </div>
                 <section className="citiesList">
                 {newCities.filter((location) => {
                     if (search == "") {
@@ -28,8 +29,7 @@ function Cities({ match }) {
                         return location
                     }
                 }).map(location => {
-                    return (
-                        
+                    return (    
                     <Link className="citiesLink" to={`/states/cities/${location}`} key={location}>
                             <div>
                                 <span className="citiesName">{location}</span>

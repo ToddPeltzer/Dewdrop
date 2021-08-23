@@ -12,13 +12,9 @@ function States(props) {
     return (
         <div>
             <span className="statesTitle">State List</span>
-
-
-
-            <input type="text" placeholder="Filter States" onChange={e => {setSearch(e.target.value)}}/>
-            
-
-
+            <div className="stateFilter">
+            <input type="text" placeholder="Filter States..." onChange={e => {setSearch(e.target.value)}}/>
+            </div>
             <section className="stateList">
                 {states.filter((state) => {
                     if (search == "") {
@@ -30,7 +26,7 @@ function States(props) {
                     return (
                         <Link className="statesLink" to={`/states/${state.name}`} key={state.name}>
                                 <div>
-                                    <span className="stateName">{state.name}</span>
+                                    <span>{state.name}</span>
                                 </div>
                         </Link>
                     )

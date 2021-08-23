@@ -47,3 +47,10 @@
     font-weight: bolder;
     padding-top: 30px;
 }
+
+.backButton {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}

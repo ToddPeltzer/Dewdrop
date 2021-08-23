@@ -115,7 +115,7 @@ const [city, setCity] = useState([])
                 </div>
             </section>
             <div className="backButton">
-            <button onClick={() => history.goBack()}>Back to Cities</button>
+                <button onClick={() => history.goBack()}>Back to City List</button>
             </div>
         </div>
     );

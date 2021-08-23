@@ -1,7 +1,4 @@
-
-
 import React, { useState, useEffect } from 'react';
-import '../styling/city-result.css'
 import windy from '../images/new-windy.png'
 import cloudy from '../images/cloudy.png'
 import sunny from '../images/sunny.png'
@@ -9,6 +6,7 @@ import foggy from '../images/foggy.png'
 import rainy from '../images/rainy.png'
 import stormy from '../images/thunder.png'
 import snowy from '../images/new-snow.png'
+import '../styling/city-result.css'
 
 
 function CityResult({ match }) {

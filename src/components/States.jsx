@@ -8,12 +8,25 @@ import '../styling/states.css'
 function States(props) {
 
     const [states, setStates] = useState(StateData)
-
+    const [search, setSearch] = useState("")
     return (
         <div>
             <span className="statesTitle">State List</span>
+
+
+
+            <input type="text" placeholder="Filter States" onChange={e => {setSearch(e.target.value)}}/>
+            
+
+
             <section className="stateList">
-                {states.map(state => {
+                {states.filter((state) => {
+                    if (search == "") {
+                        return state.name
+                    } else if (state.name.toLowerCase().includes(search.toLowerCase())) {
+                        return state.name
+                    }
+                }).map(state => {
                     return (
                         <Link className="statesLink" to={`/states/${state.name}`} key={state.name}>
                                 <div>

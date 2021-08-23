@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
-import '../styling/header.css'
+import { Link, Route } from 'react-router-dom'
 import Logo from '../images/cloud.png'
 import Search from './Search'
+import CityResult from './CityResult';
+import '../styling/header.css'
 
 function Header(props) {
-    console.log(Logo)
 
     return (
         <div className="headerContainer">
@@ -23,6 +23,14 @@ function Header(props) {
             <span>
                 <Search />
             </span>
+
+            {/* <Route  exact path="/states/cities/:id"
+                    render={(routerProps) => (
+                        <CityResult match={routerProps.match}
+                        />
+                    )}
+            /> */}
+
         </div>
     );
 }

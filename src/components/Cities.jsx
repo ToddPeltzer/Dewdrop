@@ -37,11 +37,15 @@ function Cities({ match }) {
                     }
                 }).map(location => {
                     return (    
+                        <div className="buttonContainer">
+                        <button className="buttonLink">
                     <Link className="citiesLink" to={`/states/cities/${location}`} key={location}>
                             <div>
                                 <span className="citiesName">{location}</span>
                             </div>
                     </Link>
+                    </button>
+                    </div>
                     )
                 })}
                 </section>

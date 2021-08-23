@@ -6,6 +6,8 @@ import foggy from '../images/foggy.png'
 import rainy from '../images/rainy.png'
 import stormy from '../images/thunder.png'
 import snowy from '../images/new-snow.png'
+import loading from '../images/loading.gif'
+
 
 
 const key = process.env.REACT_APP_WEATHER_KEY
@@ -77,7 +79,10 @@ function Seattle(props) {
 
     }
 
-    if (!city.wind && !city.main) { return <span className="loading">loading please wait...</span>} else {
+    if (!city.wind && !city.main) { 
+        return <div className="loading"><img className="loadingImg" src={loading} alt="Loading Icon"></img>
+        <span className="loadingText">Loading...</span></div>
+} else {
         // convert Kelvin to Fahrenheit and floor it
         const temp = Math.floor(( city.main.temp - 273.15 ) * 9/5 + 32)
         

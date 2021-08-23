@@ -24,11 +24,15 @@ function States(props) {
                     }
                 }).map(state => {
                     return (
+                        <div className="buttonContainer">
+                        <button className="buttonLink">
                         <Link className="statesLink" to={`/states/${state.name}`} key={state.name}>
                                 <div>
                                     <span>{state.name}</span>
                                 </div>
                         </Link>
+                        </button>
+                        </div>
                     )
                 })}
             </section>  

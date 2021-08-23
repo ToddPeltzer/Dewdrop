@@ -7,6 +7,7 @@ import foggy from '../images/foggy.png'
 import rainy from '../images/rainy.png'
 import stormy from '../images/thunder.png'
 import snowy from '../images/new-snow.png'
+import loading from '../images/loading.gif'
 import '../styling/city-result.css'
 
 
@@ -82,10 +83,12 @@ const [city, setCity] = useState([])
 
     }
 
-    if (!city.wind && !city.main) { return <span className="loading">loading please wait...</span>} else {
+    if (!city.wind && !city.main) { 
+        return <div className="loading"><img className="loadingImg" src={loading} alt="Loading Icon"></img>
+        <span className="loadingText">Loading...</span></div>
+} else {
         // convert Kelvin to Fahrenheit and floor it
         const temp = Math.floor(( city.main.temp - 273.15 ) * 9/5 + 32)
-        
         const tempMin = Math.floor(( city.main.temp_min - 273.15 ) * 9/5 + 32)
         const tempMax = Math.floor(( city.main.temp_max - 273.15 ) * 9/5 + 32)
 

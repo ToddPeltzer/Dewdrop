@@ -1,30 +1,30 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import '../styling/search.css'
 
-function Search(props) {
+function Search({match}) {
 
-const key = process.env.REACT_APP_WEATHER_KEY
 
 const [search, setSearch] = useState("")
-const initialSearch = ""
+
 
 function handleChange(e) {
-    setSearch({ ...search, [e.target.id]: e.target.value })
+    setSearch(e.target.value)
 }
 
 function handleSubmit(e) {
-    e.preventDefault()
-    setSearch("")
+   match.history.push(`/${search}`)
+   setSearch("")
 }
 
     return (
         <form onSubmit={handleSubmit}>
             <input
-                id="location"
+                placeholder="Search Locations..."
                 type="text"
                 onChange={handleChange}
-                value={search.initialSearch} />
-            <Link to={`/states/cities/${initialSearch}`} key={initialSearch}>Search</Link>
+                value={search} 
+                />
+            <button className="button" type="submit">Search</button>
         </form>
     );
 }

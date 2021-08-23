@@ -33,7 +33,7 @@ function Main(props) {
                     )}
             />
 
-            <Route  exact path="/:id"
+            <Route  exact path="/search/:id"
                     render={(routerProps) => (
                         <SearchResult match={routerProps.match}
                         />

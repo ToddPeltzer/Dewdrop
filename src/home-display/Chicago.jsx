@@ -10,7 +10,7 @@ import loading from '../images/loading.gif'
 
 const key = process.env.REACT_APP_WEATHER_KEY
 
-function Chicago(props) {
+function Chicago({weatherIcon}) {
 
     const [city, setCity] = useState([])
 

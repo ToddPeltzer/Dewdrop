@@ -85,7 +85,7 @@ const [city, setCity] = useState([])
 
     if (!city.wind && !city.main) { 
         return <div className="loading"><img className="loadingImg" src={loading} alt="Loading Icon"></img>
-        <span className="loadingText">Loading...</span></div>
+        <span className="loadingText"></span></div>
 } else {
         // convert Kelvin to Fahrenheit and floor it
         const temp = Math.floor(( city.main.temp - 273.15 ) * 9/5 + 32)

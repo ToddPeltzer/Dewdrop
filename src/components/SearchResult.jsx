@@ -82,7 +82,7 @@ const [city, setCity] = useState([])
 
     }
 
-    if (!city.wind && !city.main) { 
+if (!city.wind && !city.main) { 
         return <div className="loading"><img className="loadingImg" src={loading} alt="Loading Icon"></img>
         <span className="loadingText">Loading...</span></div>
 } else {
@@ -117,8 +117,8 @@ const [city, setCity] = useState([])
                 </div>
             </section>
             <div className="backButton">
-                <button>
-                    <Link to={"/"}>Home</Link>
+                <button className="searchHomeButton">
+                    <Link to={"/"} style={{color: 'black', textDecoration: 'none'}}>Home</Link>
                 </button>
             </div>
         </div>

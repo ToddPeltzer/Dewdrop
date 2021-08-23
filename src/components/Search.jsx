@@ -12,7 +12,7 @@ function handleChange(e) {
 }
 
 function handleSubmit(e) {
-   match.history.push(`/${search}`)
+   match.history.push(`/search/${search}`)
    setSearch("")
 }
 

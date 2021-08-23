@@ -9,6 +9,7 @@ function States(props) {
 
     const [states, setStates] = useState(StateData)
     const [search, setSearch] = useState("")
+    
     return (
         <div>
             <span className="statesTitle">State List</span>

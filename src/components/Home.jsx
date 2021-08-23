@@ -13,6 +13,7 @@ import '../styling/home.css'
 
 function Home(props) {
 
+
     return (
             <div>
                 <span className="popularCitiesTitle">Popular Cities</span>

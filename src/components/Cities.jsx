@@ -8,15 +8,13 @@ import '../styling/cities.css'
 function Cities({ match }) {
 
 
-    const [cities, setCities] = useState(StateData)
-    const [search, setSearch] = useState("")
+    const [cities, setCities] = useState(StateData)     //setting variable cities to JSON data
+    const [search, setSearch] = useState("")        //setting variable search to empty string
 
+    let newCities = cities.filter(item => item.name == match.params.id)[0].city     //filtering out JSON to get only the cities within the state user clicked on
 
-    //filtering out JSON to get only the cities within the state user clicked on
-    let newCities = cities.filter(item => item.name == match.params.id)[0].city
     
-    let history = useHistory()
-
+    let history = useHistory()      //function for back button to revert to previously visited page
 
 
     return (
@@ -28,26 +26,27 @@ function Cities({ match }) {
                 <div className="backButton">
                     <button className="back" onClick={() => history.goBack()}>Back to State List</button>
                 </div>
-                <section className="citiesList">
-                {newCities.filter((location) => {
-                    if (search == "") {
-                        return location
-                    } else if (location.toLowerCase().includes(search.toLowerCase())) {
-                        return location
-                    }
-                }).map(location => {
-                    return (    
-                        <div className="buttonContainer">
-                        <button className="buttonLink">
-                    <Link className="citiesLink" to={`/states/cities/${location}`} key={location}>
-                            <div>
-                                <span className="citiesName">{location}</span>
+                <section className="citiesList">     
+                    {/*filters the city for our filter bar based on active user input*/}
+                    {newCities.filter((location) => {
+                        if (search == "") {
+                            return location
+                        } else if (location.toLowerCase().includes(search.toLowerCase())) {
+                            return location
+                        }
+                    }).map(location => {        // maps through locations or filtered locations that match input in filter bar
+                        return (    
+                            <div className="buttonContainer">
+                                <button className="buttonLink">
+                                <Link className="citiesLink" to={`/states/cities/${location}`} key={location}>      {/* links to the result page based on user selection */}
+                                    <div>
+                                        <span className="citiesName">{location}</span>
+                                    </div>
+                                </Link>
+                                </button>
                             </div>
-                    </Link>
-                    </button>
-                    </div>
-                    )
-                })}
+                        )
+                    })}
                 </section>
             </div> 
     );

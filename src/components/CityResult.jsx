@@ -14,28 +14,29 @@ import '../styling/city-result.css'
 function CityResult({ match }) {
 
 
-const key = process.env.REACT_APP_WEATHER_KEY
+    const key = process.env.REACT_APP_WEATHER_KEY
 
-const [city, setCity] = useState([])
+    const [city, setCity] = useState([])
+        //getting API information for the city user selected from the city list
+        useEffect (() => {
+            const url  = `//api.openweathermap.org/data/2.5/weather?q=${match.params.id}&appid=${key}`
+            fetch(url)
+            .then((res) => {
+               return res.json()
+            })
+            .then((res) => {
+                setCity(res)
+            })
+            .catch(console.error)
+        }, [])
 
-    useEffect (() => {
-        const url  = `//api.openweathermap.org/data/2.5/weather?q=${match.params.id}&appid=${key}`
-        fetch(url)
-        .then((res) => {
-           return res.json()
-        })
-        .then((res) => {
-            setCity(res)
-        })
-        .catch(console.error)
-    }, [])
-
+    //setting variables for below rules on icons
     let icon = ""
     let wind = ""
     let altText = ""
-    let history = useHistory()
+    let history = useHistory()      //function for back button to revert to previous page
 
-
+    //setting rules for the icon presented on results page
     function weatherIcon () {
         if (wind > "10") {
             icon = windy
@@ -83,19 +84,21 @@ const [city, setCity] = useState([])
 
     }
 
+    //guard to return loading if API is slow
     if (!city.wind && !city.main) { 
-        return <div className="loading"><img className="loadingImg" src={loading} alt="Loading Icon"></img>
-        <span className="loadingText"></span></div>
-} else {
+        return  <div className="loading">
+                    <img className="loadingImg" src={loading} alt="Loading Icon"></img>
+                    <span className="loadingText"></span>
+                </div>
+        } else {
         // convert Kelvin to Fahrenheit and floor it
         const temp = Math.floor(( city.main.temp - 273.15 ) * 9/5 + 32)
         const tempMin = Math.floor(( city.main.temp_min - 273.15 ) * 9/5 + 32)
         const tempMax = Math.floor(( city.main.temp_max - 273.15 ) * 9/5 + 32)
 
-        // floor wind speed
-        wind = Math.floor(city.wind.speed)
+        wind = Math.floor(city.wind.speed)      // floor wind speed
 
-        weatherIcon()
+        weatherIcon()       //calling icon function from above
 
     return (
         <div>

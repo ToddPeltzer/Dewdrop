@@ -8,6 +8,7 @@ function Header(props) {
 
     return (
         <div className="headerContainer">
+
             <span className="headerLogo">
                 <Link to="/"><img id="headerImage" src={Logo} alt="cloud-logo"></img></Link>
             </span>
@@ -25,8 +26,7 @@ function Header(props) {
                         />
                 </span>
             </div>
-
-
+            
         </div>
     );
 }

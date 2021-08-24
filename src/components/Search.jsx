@@ -6,11 +6,12 @@ function Search({match}) {
 
 const [search, setSearch] = useState("")
 
-
+//function to change search variable based on user input
 function handleChange(e) {
     setSearch(e.target.value)
 }
 
+//function to push the input to slug and provide results of page searching for. resets search variable to empty. prevent default not used.
 function handleSubmit(e) {
    match.history.push(`/search/${search}`)
    setSearch("")

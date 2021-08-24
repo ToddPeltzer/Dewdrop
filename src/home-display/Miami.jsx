@@ -9,13 +9,13 @@ import snowy from '../images/new-snow.png'
 import loading from '../images/loading.gif'
 
 
-
 const key = process.env.REACT_APP_WEATHER_KEY
 
 function Miami(props) {
 
     const [city, setCity] = useState([])
 
+    //API call for specific location on home page
     useEffect (() => {
         const url  = `//api.openweathermap.org/data/2.5/weather?q=miami&appid=${key}`
         fetch(url)
@@ -28,10 +28,12 @@ function Miami(props) {
         .catch(console.error)
     }, [])
 
+    //setting variable values for below function regarding icons
     let icon = ""
     let wind = ""
     let altText = ""
 
+    //function to change icon based on weather conditions
     function weatherIcon () {
         if (wind > "10") {
             icon = windy
@@ -79,20 +81,21 @@ function Miami(props) {
 
     }
 
+    //guard in case API is slightly behind
     if (!city.wind && !city.main) { 
-        return <div className="loading"><img className="loadingImg" src={loading} alt="Loading Icon"></img>
-        <span className="loadingText">Loading...</span></div>
-} else {
+        return  <div className="loading">
+                    <img className="loadingImg" src={loading} alt="Loading Icon"></img>
+                    <span className="loadingText">Loading...</span>
+                </div>
+    } else {
         // convert Kelvin to Fahrenheit and floor it
         const temp = Math.floor(( city.main.temp - 273.15 ) * 9/5 + 32)
-        
         const tempMin = Math.floor(( city.main.temp_min - 273.15 ) * 9/5 + 32)
         const tempMax = Math.floor(( city.main.temp_max - 273.15 ) * 9/5 + 32)
 
-        // floor wind speed
-        const wind = Math.floor(city.wind.speed)
+        const wind = Math.floor(city.wind.speed)        // floor wind speed
 
-        weatherIcon()
+        weatherIcon()       //call icon change function based on results weather
 
     return (
         <div>

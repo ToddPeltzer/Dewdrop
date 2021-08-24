@@ -11,23 +11,23 @@ This app is meant for people looking to check current weather status of cities w
 
 ## Walkthrough
 This is the home page where you will see 10 constant cities listed for quick access.
-![Home Screen](./read-me-images/home-screen.png)
+![Home Screen](./src/read-me-images/home-screen.png)
 
 State list screen.
-![State List](./read-me-images/state-list.png)
+![State List](./src/read-me-images/state-list.png)
 
 City list screen.
-![City List](./read-me-images/city-list.png)
+![City List](./src/read-me-images/city-list.png)
 
 Result page.
-![Results](./read-me-images/result.png)
+![Results](./src/read-me-images/result.png)
 
 ## Wireframe
 Original concept layout for the app.
-![Main Page Layout](./read-me-images/wireframe-main-layout.png)
+![Main Page Layout](./src/read-me-images/wireframe-main-layout.png)
 
 Original concept for component relations.
-![Component Layout](./read-me-images/wireframe-component-path.png)
+![Component Layout](./src/read-me-images/wireframe-component-path.png)
 
 ## Unsolved Problems/Issues
 I would like to impliment a weather map showing the US current conditions on the home page

@@ -118,7 +118,7 @@ if (!city.wind && !city.main) {
             </section>
             <div className="backButton">
                 <button className="searchHomeButton">
-                    <Link to={"/"} style={{color: 'black', textDecoration: 'none'}}>Home</Link>
+                    <Link to={"/"} style={{ color: 'black', textDecoration: 'none' }}>Home</Link>
                 </button>
             </div>
         </div>

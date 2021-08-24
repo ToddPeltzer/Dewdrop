@@ -68,4 +68,13 @@ img.loadingImg {
     display: flex;
     justify-content: center;
     padding: 10px;
+    background-color: #E3F4FE;
+    border: 1px solid grey;
+    padding: 10px
+}
+
+.back {
+    background-color: #E3F4FE;
+    border: 1px solid grey;
+    padding: 10px
 }

@@ -26,7 +26,7 @@ function Cities({ match }) {
                     <input type="text" placeholder="Filter Cities..." onChange={e => {setSearch(e.target.value)}}/>
                 </div>
                 <div className="backButton">
-                    <button onClick={() => history.goBack()}>Back to State List</button>
+                    <button className="back" onClick={() => history.goBack()}>Back to State List</button>
                 </div>
                 <section className="citiesList">
                 {newCities.filter((location) => {

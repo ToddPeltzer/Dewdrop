@@ -16,13 +16,15 @@ function Header(props) {
                 <Link to="/" style={{ color: '#E3F4FE', textDecoration: 'none', fontSize: '50px' }}>Dewdrop</Link>
             </span>
 
-            <span className="headerStateList">
+            <div className="headerStateList">
                 <Link to="/states" style={{ color: '#E3F4FE', textDecoration: 'none', fontSize: '50px' }}>State List</Link>
-                <Route render={(routerProps) => (
-                    <Search match= {routerProps} />
-                )}
-                    />
-            </span>
+                <span className="search">
+                    <Route render={(routerProps) => (
+                        <Search match= {routerProps} />
+                    )}
+                        />
+                </span>
+            </div>
 
 
         </div>

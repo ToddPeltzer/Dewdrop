@@ -24,22 +24,17 @@
 
 .headerName {
     flex-grow: 1;
+    padding-right: 35px;
 }
 
 .headerStateList {
     margin-right: 50px;
+    padding-top: 31px;
 }
 
 .search {
     display: flex;
     justify-content: end;
+    padding-top: 10px;
+    margin-left: 45px;
 }
-
-
-
-
-/* @media (max-width: 920px) {
-    CLASS {
-        flex: 1 21%;
-    }
-} */

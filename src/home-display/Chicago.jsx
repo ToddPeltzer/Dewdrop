@@ -8,9 +8,10 @@ import stormy from '../images/thunder.png'
 import snowy from '../images/new-snow.png'
 import loading from '../images/loading.gif'
 
+
 const key = process.env.REACT_APP_WEATHER_KEY
 
-function Chicago({weatherIcon}) {
+function Chicago(props) {
 
     const [city, setCity] = useState([])
 

@@ -13,7 +13,7 @@ function Header(props) {
             </span>
             
             <span className="headerName">
-                <Link to="/" style={{ color: '#E3F4FE', textDecoration: 'none', fontSize: '50px' }}>Weather App</Link>
+                <Link to="/" style={{ color: '#E3F4FE', textDecoration: 'none', fontSize: '50px' }}>Dewdrop</Link>
             </span>
 
             <span className="headerStateList">

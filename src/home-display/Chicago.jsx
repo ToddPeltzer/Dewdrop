@@ -14,6 +14,7 @@ const key = process.env.REACT_APP_WEATHER_KEY
 function Chicago(props) {
 
     const [city, setCity] = useState([])
+    const [air, setAir] = useState([])
 
     //API call for specific location on home page
     useEffect (() => {
@@ -114,6 +115,8 @@ function Chicago(props) {
             Wind: {wind}mph
                 <br/>
             Humidity: {city.main.humidity}%
+                <br/>
+            AQI: {air}
         </div>
     );
 }

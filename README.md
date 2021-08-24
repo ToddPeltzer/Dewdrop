@@ -5,6 +5,8 @@ Link to the app -> https://ga-project-weather-app.herokuapp.com/
 
 ## Technologies Used
 React.js | JavaScript | CSS | HTML
+API Source -> https://openweathermap.org/
+JSON Data (I revised to fit my needs) -> https://gist.github.com/ahmu83/38865147cf3727d221941a2ef8c22a77
 
 ## User Stories
 This app is meant for people looking to check current weather status of cities within the United States.
@@ -30,8 +32,10 @@ Original concept for component relations.
 ![Component Layout](./src/read-me-images/wireframe-component-path.png)
 
 ## Unsolved Problems/Issues
-I would like to impliment a weather map showing the US current conditions on the home page
+I would like to impliment a weather map showing the US current conditions on the home page.
 
 Adding additional information to each result page such as future forecast (hourly for the day and weekly).
 
 Fix guard against input in the search bar from loading when a non-city string is entered.
+
+Add conversion for UNIX time to add night time icons.

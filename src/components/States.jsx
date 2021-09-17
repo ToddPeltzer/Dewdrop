@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom'
 import StateData from '../state-data.json'
-import '../styling/states.css'
+import '../App.css'
 
 
 function States(props) {
@@ -11,10 +11,11 @@ function States(props) {
     const [search, setSearch] = useState("")        //setting search variable to empty string
     
     return (
-        <div>
+        <div className="popular-cities-container">
             <span className="statesTitle">State List</span>
             {/* filter for state list */}
             <div className="stateFilter">
+                {/* sets search variable to input as it is typed */}
                 <input type="text" placeholder="Filter States..." onChange={e => {setSearch(e.target.value)}}/>
             </div>
             <section className="stateList">

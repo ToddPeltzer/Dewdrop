@@ -9,26 +9,26 @@ import Philadelphia from '../home-display/Philadelphia'
 import Phoenix from '../home-display/Phoenix'
 import SanJose from '../home-display/SanJose'
 import SanDiego from '../home-display/SanDiego'
-import '../styling/home.css'
+import '../App.css'
 
 function Home(props) {
 
 
     return (
-            <div>
-                <span className="popularCitiesTitle">Popular Cities</span>
-                <section className="homeContainer">
-                    <div className="homeCity"><Seattle /></div>
-                    <div className="homeCity"><SanJose /></div>
-                    <div className="homeCity"><LosAngeles /></div>
-                    <div className="homeCity"><SanDiego /></div>
-                    <div className="homeCity"><Phoenix /></div>
-                    <div className="homeCity"><Chicago /></div>
-                    <div className="homeCity"><Houston /></div>
-                    <div className="homeCity"><Philadelphia /></div>
-                    <div className="homeCity"><NewYork /></div>
-                    <div className="homeCity"><Miami /></div>
-                </section>
+            <div className="popular-cities-container">
+                <div className="popular-cities-title"><h2>Popular Cities</h2></div>
+                <div className="popular-cities-list">
+                    <div className="popular-city"><Seattle /></div>
+                    <div className="popular-city"><SanJose /></div>
+                    <div className="popular-city"><LosAngeles /></div>
+                    <div className="popular-city"><SanDiego /></div>
+                    <div className="popular-city"><Phoenix /></div>
+                    <div className="popular-city"><Chicago /></div>
+                    <div className="popular-city"><Houston /></div>
+                    <div className="popular-city"><Philadelphia /></div>
+                    <div className="popular-city"><NewYork /></div>
+                    <div className="popular-city"><Miami /></div>
+                </div>
             </div>
     );}
 

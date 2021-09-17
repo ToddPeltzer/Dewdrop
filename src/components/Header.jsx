@@ -2,29 +2,29 @@ import React from 'react';
 import { Link, Route } from 'react-router-dom'
 import Logo from '../images/cloud.png'
 import Search from './Search'
-import '../styling/header.css'
+import '../App.css'
 
 function Header(props) {
 
     return (
-        <div className="headerContainer">
+        <div className="header-container">
 
-            <span className="headerLogo">
-                <Link to="/"><img id="headerImage" src={Logo} alt="cloud-logo"></img></Link>
-            </span>
+            <div className="header-logo">
+                <Link to="/"><img src={Logo} alt="cloud-logo" width= "300px" height= "190px"></img></Link>
+            </div>
             
-            <span className="headerName">
+            <div className="header-name">
                 <Link to="/" style={{ color: '#E3F4FE', textDecoration: 'none', fontSize: '50px' }}>Dewdrop</Link>
-            </span>
+            </div>
 
-            <div className="headerStateList">
+            <div className="header-state-list">
                 <Link to="/states" style={{ color: '#E3F4FE', textDecoration: 'none', fontSize: '50px' }}>State List</Link>
-                <span className="search">
+                <div className="search-bar">
                     <Route render={(routerProps) => (
                         <Search match= {routerProps} />
                     )}
                         />
-                </span>
+                </div>
             </div>
             
         </div>

@@ -7,6 +7,8 @@ import rainy from '../images/rainy.png'
 import stormy from '../images/thunder.png'
 import snowy from '../images/new-snow.png'
 import loading from '../images/loading.gif'
+import '../App.css'
+
 
 
 const key = process.env.REACT_APP_WEATHER_KEY
@@ -59,6 +61,9 @@ function Miami(props) {
         } else if (city.weather[0].main === "Mist") {
             icon = rainy
             altText = "Mist Image"
+        } else if (city.weather[0].main === "Drizzle") {
+            icon = rainy
+            altText = "Drizzle Image"
         } else if(city.weather[0].main === "Thunderstorm") {
             icon = stormy
             altText = "Storm Image"
@@ -98,22 +103,17 @@ function Miami(props) {
         weatherIcon()       //call icon change function based on results weather
 
     return (
-        <div>
-            <img className="weatherIcon" src={icon} alt={altText}></img>
-                <br/>
-            City: {city.name}
-                <br/>
-            Temp: {temp}ºF
-                <br/>
-            Temp Min: {tempMin}ºF
-                <br/>
-            Temp Max: {tempMax}ºF
-                <br/>
-            Condition: {city.weather[0].main}
-                <br/>
-            Wind: {wind}mph
-                <br/>
-            Humidity: {city.main.humidity}%
+        <div className="popular-city-content-container">
+            <img className="weather-icon" src={icon} alt={altText}></img>
+            <div className="popular-city-text">
+                <div>City: {city.name}</div>
+                <div>Temp: {temp}ºF</div>
+                <div>Temp Min: {tempMin}ºF</div>
+                <div>Temp Max: {tempMax}ºF</div>
+                <div>Condition: {city.weather[0].main}</div>
+                <div>Wind: {wind}mph</div>
+                <div>Humidity: {city.main.humidity}%</div>
+            </div>
         </div>
     );
 }

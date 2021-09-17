@@ -8,7 +8,7 @@ import rainy from '../images/rainy.png'
 import stormy from '../images/thunder.png'
 import snowy from '../images/new-snow.png'
 import loading from '../images/loading.gif'
-import '../styling/city-result.css'
+import '../App.css'
 
 
 function SearchResult({ match }) {

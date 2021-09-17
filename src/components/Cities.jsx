@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom'
 import StateData from '../state-data.json'
-import '../styling/cities.css'
+import '../App.css'
 
 
 function Cities({ match }) {
@@ -18,7 +18,7 @@ function Cities({ match }) {
 
 
     return (
-            <div>
+            <div className="popular-cities-container">
                 <span className="citiesTitle">Cities in {match.params.id}</span>
                 <div className="cityFilter">
                     <input type="text" placeholder="Filter Cities..." onChange={e => {setSearch(e.target.value)}}/>

@@ -1,15 +1,199 @@
-.appMain {
-    background-color: #19C3FB;
-    height:100%;
-    min-height: 100vmax;
-    width: 100%;
-    min-width: 100vmax;
+.main-container {
+    background-color: #1C9CF6;
+    border-radius: 20px;
+    padding-bottom: 20px;
+    height: 100%
 }
 
-@media screen and (max-width: 623px) {
-    .appMain {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+.header-container {
+    background-color: #1D71F2;
+    font-family: 'Titan One', cursive;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    padding: 5px;
 }
+
+.header-logo {
+    margin-left: 50px;
+}
+
+.header-name {
+    padding-right: 85px;
+}
+
+.header-state-list {
+    margin-right: 50px;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.popular-cities-container {
+    background-color: #19C3FB;
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    height: 85vh;
+    border-radius: 20px;
+    overflow-y: auto;
+}
+
+.popular-cities-title {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.popular-cities-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    overflow-y: auto;
+    margin: 50px;
+}
+
+.popular-city {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 20px;
+    width: 300px;
+    height: 300px;
+    border: 5px solid #FFCD00;
+    background-color: #FEFADF;
+    margin: 30px 10px 30px 10px;
+}
+
+.popular-city-content-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height:100%;
+}
+
+.weather-icon {
+    height: 100px;
+    width: 100px;
+    padding-bottom: 20px;
+}
+
+.popular-city-text {
+    margin-top: 5px;
+    font-size: large
+}
+
+.statesTitle {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bolder;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.statesLink {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonLink {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #19C3FB;
+    border: 0;
+    font-size: 18px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+
+.statesLink:hover {
+    font-size: 30px;
+}
+
+.stateFilter {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.citiesTitle {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bolder;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.citiesLink {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.cityFilter {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.citiesLink:hover {
+    font-size: 30px;
+}
+
+.backButton {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.back {
+    background-color: #E3F4FE;
+    border: 1px solid grey;
+}
+
+.result-city-container {
+    background-color: #19C3FB;
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 85vh;
+    border-radius: 20px;
+    overflow-y: auto;
+}
+
+.popular-cities-container::-webkit-scrollbar, .result-city-container::-webkit-scrollbar, .popular-cities-list::-webkit-scrollbar {
+    display: none;
+  }

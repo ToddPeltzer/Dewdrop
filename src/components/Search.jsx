@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styling/search.css'
+import '../App.css'
 
 function Search({match}) {
 
@@ -12,7 +12,7 @@ function handleChange(e) {
 }
 
 //function to push the input to slug and provide results of page searching for. resets search variable to empty. prevent default not used.
-function handleSubmit(e) {
+function handleSubmit() {
    match.history.push(`/search/${search}`)
    setSearch("")
 }

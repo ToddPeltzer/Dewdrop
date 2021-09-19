@@ -88,9 +88,11 @@ function Seattle(props) {
 
     //guard in case API is slightly behind
     if (!city.wind && !city.main) { 
-        return  <div className="loading">
-                    <img className="loadingImg" src={loading} alt="Loading Icon"></img>
-                    <span className="loadingText">Loading...</span>
+        return  <div className = "loading-container">
+                    <div className="loading">
+                        <img className="loadingImg" src={loading} alt="Loading Icon"></img>
+                        <span className="loadingText">Loading...</span>
+                    </div>
                 </div>
     } else {
         // convert Kelvin to Fahrenheit and floor it

@@ -86,9 +86,11 @@ function SearchResult({ match }) {
 
     //guard to return loading if API is slow
     if (!city.wind && !city.main) { 
-        return  <div className="loading">
-                    <img className="loadingImg" src={loading} alt="Loading Icon"></img>
-                    <span className="loadingText">Loading...</span>
+        return  <div className = "loading-container">
+                    <div className="loading">
+                        <img className="loadingImg" src={loading} alt="Loading Icon"></img>
+                        <span className="loadingText">Loading...</span>
+                    </div>
                 </div>
     } else {
         // convert Kelvin to Fahrenheit and floor it
@@ -101,31 +103,28 @@ function SearchResult({ match }) {
         weatherIcon()       //calling icon function
     if (city)
         return (
-            <div>
-                <span className="citiesResultTitle">{city.name}</span>
-                <section className="cityResultContainer">
-                    <div className="cityResult">
-                        <img className="weatherIcon" src={icon} alt={altText}></img>
-                            <br/>
-                        Temp: {temp}ºF
-                            <br/>
-                        Temp Min: {tempMin}ºF
-                            <br/>
-                        Temp Max: {tempMax}ºF
-                            <br/>
-                        Condition: {city.weather[0].main}
-                            <br/>
-                        Wind: {wind}mph
-                            <br/>
-                        Humidity: {city.main.humidity}%
+            <div className="result-city-container">
+            <h2 className="popular-cities-title">{city.name}</h2>
+            <div className="backButton">
+                <Link to={"/"} style={{ color: 'black', textDecoration: 'none' }}>
+                    <button className="back">Home</button>
+                </Link>
+            </div>
+            <div className="popular-city">
+                <div className="popular-city-content-container">
+                    <img className="weather-icon" src={icon} alt={altText}></img>
+                    <div className="popular-city-text">
+                        <div>City: {city.name}</div>
+                        <div>Temp: {temp}ºF</div>
+                        <div>Temp Min: {tempMin}ºF</div>
+                        <div>Temp Max: {tempMax}ºF</div>
+                        <div>Condition: {city.weather[0].main}</div>
+                        <div>Wind: {wind}mph</div>
+                        <div>Humidity: {city.main.humidity}%</div>
                     </div>
-                </section>
-                <div className="backButton">
-                    <button className="searchHomeButton">
-                        <Link to={"/"} style={{ color: 'black', textDecoration: 'none' }}>Home</Link>
-                    </button>
                 </div>
             </div>
+        </div>
         );
     }
 }

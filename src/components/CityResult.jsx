@@ -86,9 +86,11 @@ function CityResult({ match }) {
 
     //guard to return loading if API is slow
     if (!city.wind && !city.main) { 
-        return  <div className="loading">
-                    <img className="loadingImg" src={loading} alt="Loading Icon"></img>
-                    <span className="loadingText"></span>
+        return  <div className = "loading-container">
+                    <div className="loading">
+                        <img className="loadingImg" src={loading} alt="Loading Icon"></img>
+                        <span className="loadingText">Loading...</span>
+                    </div>
                 </div>
         } else {
         // convert Kelvin to Fahrenheit and floor it

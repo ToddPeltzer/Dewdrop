@@ -88,12 +88,18 @@ function SanDiego(props) {
 
     //guard in case API is slightly behind
     if (!city.wind && !city.main) { 
-        return  <div className = "loading-container">
-                    <div className="loading">
-                        <img className="loadingImg" src={loading} alt="Loading Icon"></img>
-                        <span className="loadingText">Loading...</span>
-                    </div>
-                </div>
+        return  <div className="popular-city-content-container">
+        <img className="loadingImg" src={loading} alt="Loading Icon"></img>                    
+        <div className="popular-city-text">
+            <div>City: Loading...</div>
+            <div>Temp: Loading...</div>
+            <div>Temp Min: Loading...</div>
+            <div>Temp Max: Loading...</div>
+            <div>Condition: Loading...</div>
+            <div>Wind: Loading...</div>
+            <div>Humidity: Loading...</div>
+        </div>
+    </div>
     } else {
         // convert Kelvin to Fahrenheit and floor it
         const temp = Math.floor(( city.main.temp - 273.15 ) * 9/5 + 32)

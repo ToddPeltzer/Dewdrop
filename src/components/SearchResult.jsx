@@ -86,10 +86,20 @@ function SearchResult({ match }) {
 
     //guard to return loading if API is slow
     if (!city.wind && !city.main) { 
-        return  <div className = "loading-container">
-                    <div className="loading">
-                        <img className="loadingImg" src={loading} alt="Loading Icon"></img>
-                        <span className="loadingText">Loading...</span>
+        return  <div className="popular-city-content-container">
+                    <div className="popular-city">
+                        <div className="popular-city-content-container">
+                            <img className="loadingImg" src={loading} alt="Loading Icon"></img>                    
+                            <div className="popular-city-text">
+                                <div>City: Loading...</div>
+                                <div>Temp: Loading...</div>
+                                <div>Temp Min: Loading...</div>
+                                <div>Temp Max: Loading...</div>
+                                <div>Condition: Loading...</div>
+                                <div>Wind: Loading...</div>
+                                <div>Humidity: Loading...</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
     } else {

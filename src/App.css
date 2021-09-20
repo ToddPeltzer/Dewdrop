@@ -194,7 +194,7 @@
     overflow-y: auto;
 }
 
-.loading-container {
+/* .loading-container {
     background-color: #19C3FB;
     margin: 50px;
     display: flex;
@@ -216,12 +216,12 @@
     background-color: #FEFADF;
     margin: 30px 10px 30px 10px;
     margin-top: 130px;
-}
+} */
 
 .loadingImg {
-    width: 200px;
-    height: 200px;
-    padding-bottom: 30px;
+    width: 100px;
+    height: 100px;
+    padding-bottom: 20px;
 }
 
 .popular-cities-container::-webkit-scrollbar, .result-city-container::-webkit-scrollbar, .popular-cities-list::-webkit-scrollbar {
